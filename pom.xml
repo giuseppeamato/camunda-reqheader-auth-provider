@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>it.pz8.camunda</groupId>
+  <artifactId>header-auth-provider</artifactId>
+  <version>1.0.0</version>
+  
+  <name>Camunda Request Header Auth Provider</name>
+  <description>Camunda Request Header Auth Provider</description>
+  
+  <packaging>jar</packaging>
+  <build>
+    <finalName>header-auth-provider-${version}</finalName>
+  </build>
+
+  <properties>
+    <camunda.version>7.14.0</camunda.version>
+    <javaee.version>6.0</javaee.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.camunda.bpm</groupId>
+        <artifactId>camunda-bom</artifactId>
+        <version>${camunda.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+        <groupId>javax</groupId>
+        <artifactId>javaee-api</artifactId>
+        <version>${javaee.version}</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+		<groupId>org.camunda.bpm</groupId>
+		<artifactId>camunda-engine</artifactId>
+		<scope>provided</scope>
+    </dependency>    
+	<dependency>
+	    <groupId>org.camunda.bpm</groupId>
+	    <artifactId>camunda-engine-rest</artifactId>
+	    <classifier>classes</classifier>
+	</dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>camunda-bpm-nexus</id>
+      <name>Camunda Maven Repository</name>
+      <url>https://app.camunda.com/nexus/content/groups/public</url>
+    </repository>
+  </repositories>
+  
+</project>
